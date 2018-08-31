@@ -1,0 +1,14 @@
+FROM umrds/serval_core_worker-gui
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+    imagemagick \
+    unzip \
+    python3-numpy \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY shared/ /shared
+
+RUN echo "export PATH=/shared/dtnrpc:$PATH" >> /root/.bashrc \
+    && cp /shared/dotcore/myservices/dtnrpc.py /root/.core/myservices/dtnrpc.py \
+    && sed -i 's/Serval}/Serval DTN-RPyC}/g' /root/.core/nodes.conf

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+SERVALINSTANCE_PATH=$SESSION_DIR/`hostname`.conf
+SID=`servald id self | tail -1`
+HOSTNAME=`hostname`
+STARTTIME=`date +%s%N`
+
+cp $2 $2_orig
+convert $2 -resize $3 $2
+
+ENDTIME=`date +%s%N`
+
+echo "$STARTTIME, $SID, $HOSTNAME, $ENDTIME" >> $1
+echo $1
+exit 0
