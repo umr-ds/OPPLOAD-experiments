@@ -26,7 +26,9 @@ class DTNRPyCService(CoreService):
     _startindex = 60
     # list of startup commands, also may be generated during startup
     _startup = (
-        'bash -c "cp -r /shared/dtnrpc_configs/* . && ln -s ../n1.xy coord.xy && nohup /shared/dtnrpc/dtn_rpyc.py -s &> worker.log &"',
+        'bash -c "cp -r /shared/dtnrpc_configs/* ."',
+        'bash -c "ln -s ../n1.xy coord.xy"',
+        'bash -c "nohup /shared/dtnrpc/dtn_rpyc.py -s &> worker.log &"'
     )
     # list of shutdown commands
     _shutdown = ()
