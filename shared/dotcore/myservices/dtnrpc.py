@@ -23,7 +23,7 @@ class DTNRPyCService(CoreService):
     #  e.g. /tmp/pycore.12345/n1.conf/)
     _configs = ()
     # this controls the starting order vs other enabled services
-    _startindex = 60
+    _startindex = 40
     # list of startup commands, also may be generated during startup
     _startup = (
         'bash -c "cp -r /shared/dtnrpc_configs/* ."',
