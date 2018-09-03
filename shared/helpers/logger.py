@@ -3,30 +3,73 @@
 import threading
 import subprocess
 import time
+import signal
+import os
+
+from _thread import start_new_thread
 
 
-def run_route_print():
-    route_print_thread = threading.Timer(30, run_route_print)
-    route_print_thread.daemon = True
-    route_print_thread.start()
-
+def execute(command, destination):
     # Execute the job!
     job_process = subprocess.Popen(
-        'servald route print',
-        shell=True,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE)
+        command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     out, err = job_process.communicate()
 
-    with open('serval.route', 'ab') as serval_route_file:
-        serval_route_file.write(b'----- ' + str(time.time()).encode() +
-                                b' -----\n')
-        serval_route_file.write(out)
-        serval_route_file.write(b'----------\n')
+    time_bytes = str(time.time()).encode()
+
+    with open(destination, 'ab') as log_file:
+        log_file.write(b'----- Out' + time_bytes + b' -----\n')
+        log_file.write(out)
+        log_file.write(b'----- Err -----\n')
+        log_file.write(err)
+        log_file.write(b'----- End -----\n')
+
+
+def serval_route_print():
+    _thread = threading.Timer(30, serval_route_print)
+    _thread.daemon = True
+    _thread.start()
+
+    execute('servald route print', 'serval.route')
+
+
+def ps_aux():
+    _thread = threading.Timer(10, ps_aux)
+    _thread.daemon = True
+    _thread.start()
+
+    execute('ps aux', 'ps.aux')
+
+
+def trace():
+    _thread = threading.Timer(10, trace)
+    _thread.daemon = True
+    _thread.start()
+
+    execute('cat coord.xy', 'trace.xy')
+
+
+def tcpdump(iface):
+    subprocess.Popen(
+        [
+            'tcpdump', '-n', '-e', '-s', '200', '-i', iface, '-w',
+            '{}.pcap'.format(iface)
+        ],
+        stdout=subprocess.PIPE)
+
+
+def netmon():
+    for iface in os.listdir('/sys/class/net/'):
+        if 'eth' not in iface:
+            continue
+
+        start_new_thread(tcpdump, (iface, ))
 
 
 if __name__ == '__main__':
-    run_route_print()
+    serval_route_print()
+    ps_aux()
+    trace()
+    netmon()
 
-    while True:
-        time.sleep(360)
+    signal.pause()
