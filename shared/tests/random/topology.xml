@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <scenario compiled="true" name="topology.xml" version="1.0" xmlns="nmfPlan" xmlns:CORE="coreSpecific">
   <network id="wlan31" name="wlan31">
-    <point lat="47.5788615568" lon="-122.131848282" type="gps"/>
+    <point lat="47.5788479104" lon="-122.131828561" type="gps"/>
     <type>wireless</type>
     <alias domain="COREID">31</alias>
     <member type="interface">n1/eth0</member>
@@ -37,16 +37,17 @@
     <member type="channel">wlan31/wireless</member>
     <channel id="wlan31/wireless" name="wireless">
       <type domain="CORE">basic_range</type>
-      <parameter name="range">275</parameter>
+      <parameter name="range">140</parameter>
       <parameter name="bandwidth">54000000</parameter>
       <parameter name="jitter">0</parameter>
       <parameter name="delay">20000</parameter>
       <parameter name="error">0</parameter>
       <CORE:mobility>
         <type>ns2script</type>
-        <parameter name="file">movement.ns_movements</parameter>
+        <parameter name="file">/shared/tests/random/movement.ns_movements</parameter>
         <parameter name="refresh_ms">50</parameter>
-        <parameter name="loop">1</parameter>
+        <parameter name="loop">0</parameter>
+        <parameter name="autostart">1.0</parameter>
       </CORE:mobility>
       <member index="0" type="interface">n1/eth0</member>
       <member index="1" type="interface">n2/eth0</member>
@@ -81,7 +82,7 @@
     </channel>
   </network>
   <host id="n1" name="n1">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n1/eth0" name="eth0">
       <member index="0" type="channel">wlan31/wireless</member>
       <member type="network">wlan31</member>
@@ -89,10 +90,10 @@
       <address type="IPv4">10.0.0.1/24</address>
     </interface>
     <alias domain="COREID">1</alias>
-    <point lat="47.5776730986" lon="-122.129973021" type="gps"/>
+    <point lat="47.5728760259" lon="-122.127459687" type="gps"/>
   </host>
   <host id="n2" name="n2">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n2/eth0" name="eth0">
       <member index="1" type="channel">wlan31/wireless</member>
       <member type="network">wlan31</member>
@@ -100,10 +101,10 @@
       <address type="IPv4">10.0.0.2/24</address>
     </interface>
     <alias domain="COREID">2</alias>
-    <point lat="47.5747224438" lon="-122.125334757" type="gps"/>
+    <point lat="47.5714210577" lon="-122.118987695" type="gps"/>
   </host>
   <host id="n3" name="n3">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n3/eth0" name="eth0">
       <member index="2" type="channel">wlan31/wireless</member>
       <member type="network">wlan31</member>
@@ -111,10 +112,10 @@
       <address type="IPv4">10.0.0.3/24</address>
     </interface>
     <alias domain="COREID">3</alias>
-    <point lat="47.5724894973" lon="-122.11751383" type="gps"/>
+    <point lat="47.5726647396" lon="-122.131631599" type="gps"/>
   </host>
   <host id="n4" name="n4">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n4/eth0" name="eth0">
       <member index="3" type="channel">wlan31/wireless</member>
       <member type="network">wlan31</member>
@@ -122,10 +123,10 @@
       <address type="IPv4">10.0.0.4/24</address>
     </interface>
     <alias domain="COREID">4</alias>
-    <point lat="47.5726433359" lon="-122.123494596" type="gps"/>
+    <point lat="47.5732355651" lon="-122.116244777" type="gps"/>
   </host>
   <host id="n5" name="n5">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n5/eth0" name="eth0">
       <member index="4" type="channel">wlan31/wireless</member>
       <member type="network">wlan31</member>
@@ -133,10 +134,10 @@
       <address type="IPv4">10.0.0.5/24</address>
     </interface>
     <alias domain="COREID">5</alias>
-    <point lat="47.5739462062" lon="-122.124430214" type="gps"/>
+    <point lat="47.5788277334" lon="-122.123850155" type="gps"/>
   </host>
   <host id="n6" name="n6">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n6/eth0" name="eth0">
       <member index="5" type="channel">wlan31/wireless</member>
       <member type="network">wlan31</member>
@@ -144,10 +145,10 @@
       <address type="IPv4">10.0.0.6/24</address>
     </interface>
     <alias domain="COREID">6</alias>
-    <point lat="47.5751426443" lon="-122.129117394" type="gps"/>
+    <point lat="47.5700302662" lon="-122.118911304" type="gps"/>
   </host>
   <host id="n7" name="n7">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n7/eth0" name="eth0">
       <member index="6" type="channel">wlan31/wireless</member>
       <member type="network">wlan31</member>
@@ -155,10 +156,10 @@
       <address type="IPv4">10.0.0.7/24</address>
     </interface>
     <alias domain="COREID">7</alias>
-    <point lat="47.5757719083" lon="-122.130223918" type="gps"/>
+    <point lat="47.5705902774" lon="-122.114514291" type="gps"/>
   </host>
   <host id="n8" name="n8">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n8/eth0" name="eth0">
       <member index="7" type="channel">wlan31/wireless</member>
       <member type="network">wlan31</member>
@@ -166,10 +167,10 @@
       <address type="IPv4">10.0.0.8/24</address>
     </interface>
     <alias domain="COREID">8</alias>
-    <point lat="47.5754215524" lon="-122.112677629" type="gps"/>
+    <point lat="47.5753685605" lon="-122.121574236" type="gps"/>
   </host>
   <host id="n9" name="n9">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n9/eth0" name="eth0">
       <member index="8" type="channel">wlan31/wireless</member>
       <member type="network">wlan31</member>
@@ -177,10 +178,10 @@
       <address type="IPv4">10.0.0.9/24</address>
     </interface>
     <alias domain="COREID">9</alias>
-    <point lat="47.5695491701" lon="-122.126597555" type="gps"/>
+    <point lat="47.5699023707" lon="-122.118075824" type="gps"/>
   </host>
   <host id="n10" name="n10">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n10/eth0" name="eth0">
       <member index="9" type="channel">wlan31/wireless</member>
       <member type="network">wlan31</member>
@@ -188,10 +189,10 @@
       <address type="IPv4">10.0.0.10/24</address>
     </interface>
     <alias domain="COREID">10</alias>
-    <point lat="47.5744610105" lon="-122.124680919" type="gps"/>
+    <point lat="47.5718650008" lon="-122.120555842" type="gps"/>
   </host>
   <host id="n11" name="n11">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n11/eth0" name="eth0">
       <member index="10" type="channel">wlan31/wireless</member>
       <member type="network">wlan31</member>
@@ -199,10 +200,10 @@
       <address type="IPv4">10.0.0.11/24</address>
     </interface>
     <alias domain="COREID">11</alias>
-    <point lat="47.5776588034" lon="-122.131648755" type="gps"/>
+    <point lat="47.5740390589" lon="-122.127759486" type="gps"/>
   </host>
   <host id="n12" name="n12">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n12/eth0" name="eth0">
       <member index="11" type="channel">wlan31/wireless</member>
       <member type="network">wlan31</member>
@@ -210,10 +211,10 @@
       <address type="IPv4">10.0.0.12/24</address>
     </interface>
     <alias domain="COREID">12</alias>
-    <point lat="47.5691627092" lon="-122.120182276" type="gps"/>
+    <point lat="47.5771777242" lon="-122.126949402" type="gps"/>
   </host>
   <host id="n13" name="n13">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n13/eth0" name="eth0">
       <member index="12" type="channel">wlan31/wireless</member>
       <member type="network">wlan31</member>
@@ -221,10 +222,10 @@
       <address type="IPv4">10.0.0.13/24</address>
     </interface>
     <alias domain="COREID">13</alias>
-    <point lat="47.5689471928" lon="-122.122000708" type="gps"/>
+    <point lat="47.5727485013" lon="-122.128439088" type="gps"/>
   </host>
   <host id="n14" name="n14">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n14/eth0" name="eth0">
       <member index="13" type="channel">wlan31/wireless</member>
       <member type="network">wlan31</member>
@@ -232,10 +233,10 @@
       <address type="IPv4">10.0.0.14/24</address>
     </interface>
     <alias domain="COREID">14</alias>
-    <point lat="47.5722431963" lon="-122.124119548" type="gps"/>
+    <point lat="47.5773343343" lon="-122.119187693" type="gps"/>
   </host>
   <host id="n15" name="n15">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n15/eth0" name="eth0">
       <member index="14" type="channel">wlan31/wireless</member>
       <member type="network">wlan31</member>
@@ -243,10 +244,10 @@
       <address type="IPv4">10.0.0.15/24</address>
     </interface>
     <alias domain="COREID">15</alias>
-    <point lat="47.577773039" lon="-122.128914203" type="gps"/>
+    <point lat="47.5736770527" lon="-122.121004179" type="gps"/>
   </host>
   <host id="n16" name="n16">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n16/eth0" name="eth0">
       <member index="15" type="channel">wlan31/wireless</member>
       <member type="network">wlan31</member>
@@ -254,10 +255,10 @@
       <address type="IPv4">10.0.0.16/24</address>
     </interface>
     <alias domain="COREID">16</alias>
-    <point lat="47.5782765342" lon="-122.120608049" type="gps"/>
+    <point lat="47.5780741779" lon="-122.129467712" type="gps"/>
   </host>
   <host id="n17" name="n17">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n17/eth0" name="eth0">
       <member index="16" type="channel">wlan31/wireless</member>
       <member type="network">wlan31</member>
@@ -265,10 +266,10 @@
       <address type="IPv4">10.0.0.17/24</address>
     </interface>
     <alias domain="COREID">17</alias>
-    <point lat="47.5713737567" lon="-122.125151191" type="gps"/>
+    <point lat="47.5776110398" lon="-122.11305951" type="gps"/>
   </host>
   <host id="n18" name="n18">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n18/eth0" name="eth0">
       <member index="17" type="channel">wlan31/wireless</member>
       <member type="network">wlan31</member>
@@ -276,10 +277,10 @@
       <address type="IPv4">10.0.0.18/24</address>
     </interface>
     <alias domain="COREID">18</alias>
-    <point lat="47.574686071" lon="-122.129424144" type="gps"/>
+    <point lat="47.5705682424" lon="-122.12394804" type="gps"/>
   </host>
   <host id="n19" name="n19">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n19/eth0" name="eth0">
       <member index="18" type="channel">wlan31/wireless</member>
       <member type="network">wlan31</member>
@@ -287,10 +288,10 @@
       <address type="IPv4">10.0.0.19/24</address>
     </interface>
     <alias domain="COREID">19</alias>
-    <point lat="47.5739222304" lon="-122.131929928" type="gps"/>
+    <point lat="47.5739034429" lon="-122.117091173" type="gps"/>
   </host>
   <host id="n20" name="n20">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n20/eth0" name="eth0">
       <member index="19" type="channel">wlan31/wireless</member>
       <member type="network">wlan31</member>
@@ -298,10 +299,10 @@
       <address type="IPv4">10.0.0.20/24</address>
     </interface>
     <alias domain="COREID">20</alias>
-    <point lat="47.5703538486" lon="-122.131250985" type="gps"/>
+    <point lat="47.5740468186" lon="-122.119940904" type="gps"/>
   </host>
   <host id="n21" name="n21">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n21/eth0" name="eth0">
       <member index="20" type="channel">wlan31/wireless</member>
       <member type="network">wlan31</member>
@@ -309,10 +310,10 @@
       <address type="IPv4">10.0.0.21/24</address>
     </interface>
     <alias domain="COREID">21</alias>
-    <point lat="47.5704677509" lon="-122.130251917" type="gps"/>
+    <point lat="47.5726956433" lon="-122.112743625" type="gps"/>
   </host>
   <host id="n22" name="n22">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n22/eth0" name="eth0">
       <member index="21" type="channel">wlan31/wireless</member>
       <member type="network">wlan31</member>
@@ -320,10 +321,10 @@
       <address type="IPv4">10.0.0.22/24</address>
     </interface>
     <alias domain="COREID">22</alias>
-    <point lat="47.5718632485" lon="-122.113316123" type="gps"/>
+    <point lat="47.5776447607" lon="-122.128018743" type="gps"/>
   </host>
   <host id="n23" name="n23">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n23/eth0" name="eth0">
       <member index="22" type="channel">wlan31/wireless</member>
       <member type="network">wlan31</member>
@@ -331,10 +332,10 @@
       <address type="IPv4">10.0.0.23/24</address>
     </interface>
     <alias domain="COREID">23</alias>
-    <point lat="47.5712554139" lon="-122.120266888" type="gps"/>
+    <point lat="47.5741857499" lon="-122.120457148" type="gps"/>
   </host>
   <host id="n24" name="n24">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n24/eth0" name="eth0">
       <member index="23" type="channel">wlan31/wireless</member>
       <member type="network">wlan31</member>
@@ -342,10 +343,10 @@
       <address type="IPv4">10.0.0.24/24</address>
     </interface>
     <alias domain="COREID">24</alias>
-    <point lat="47.5724567354" lon="-122.125571931" type="gps"/>
+    <point lat="47.5769384307" lon="-122.113350115" type="gps"/>
   </host>
   <host id="n25" name="n25">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n25/eth0" name="eth0">
       <member index="24" type="channel">wlan31/wireless</member>
       <member type="network">wlan31</member>
@@ -353,10 +354,10 @@
       <address type="IPv4">10.0.0.25/24</address>
     </interface>
     <alias domain="COREID">25</alias>
-    <point lat="47.5740601042" lon="-122.125206172" type="gps"/>
+    <point lat="47.572211416" lon="-122.11470635" type="gps"/>
   </host>
   <host id="n26" name="n26">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n26/eth0" name="eth0">
       <member index="25" type="channel">wlan31/wireless</member>
       <member type="network">wlan31</member>
@@ -364,10 +365,10 @@
       <address type="IPv4">10.0.0.26/24</address>
     </interface>
     <alias domain="COREID">26</alias>
-    <point lat="47.5756783958" lon="-122.117978835" type="gps"/>
+    <point lat="47.5710339703" lon="-122.126612754" type="gps"/>
   </host>
   <host id="n27" name="n27">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n27/eth0" name="eth0">
       <member index="26" type="channel">wlan31/wireless</member>
       <member type="network">wlan31</member>
@@ -375,10 +376,10 @@
       <address type="IPv4">10.0.0.27/24</address>
     </interface>
     <alias domain="COREID">27</alias>
-    <point lat="47.5725378599" lon="-122.125590525" type="gps"/>
+    <point lat="47.5715998955" lon="-122.112423084" type="gps"/>
   </host>
   <host id="n28" name="n28">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n28/eth0" name="eth0">
       <member index="27" type="channel">wlan31/wireless</member>
       <member type="network">wlan31</member>
@@ -386,10 +387,10 @@
       <address type="IPv4">10.0.0.28/24</address>
     </interface>
     <alias domain="COREID">28</alias>
-    <point lat="47.5772895225" lon="-122.115119406" type="gps"/>
+    <point lat="47.5724209462" lon="-122.117375371" type="gps"/>
   </host>
   <host id="n29" name="n29">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n29/eth0" name="eth0">
       <member index="28" type="channel">wlan31/wireless</member>
       <member type="network">wlan31</member>
@@ -397,10 +398,10 @@
       <address type="IPv4">10.0.0.29/24</address>
     </interface>
     <alias domain="COREID">29</alias>
-    <point lat="47.5689413073" lon="-122.112468004" type="gps"/>
+    <point lat="47.5704505239" lon="-122.122673609" type="gps"/>
   </host>
   <host id="n30" name="n30">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n30/eth0" name="eth0">
       <member index="29" type="channel">wlan31/wireless</member>
       <member type="network">wlan31</member>
@@ -408,10 +409,10 @@
       <address type="IPv4">10.0.0.30/24</address>
     </interface>
     <alias domain="COREID">30</alias>
-    <point lat="47.5700933558" lon="-122.130716818" type="gps"/>
+    <point lat="47.5769053846" lon="-122.116063346" type="gps"/>
   </host>
   <CORE:defaultservices>
-    <device type="mobile">
+    <device type="host">
       <service name="DefaultRoute"/>
       <service name="Serval"/>
       <service name="DTN-RPyC"/>

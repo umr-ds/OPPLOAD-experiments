@@ -169,7 +169,7 @@
     </channel>
   </network>
   <host id="n1" name="n1">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n1/eth0" name="eth0">
       <member index="0" type="channel">net10/chan0</member>
       <member type="network">net10</member>
@@ -188,7 +188,7 @@
     <point lat="47.5738808943" lon="-122.119425115" type="gps"/>
   </host>
   <host id="n2" name="n2">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n2/eth0" name="eth0">
       <member index="1" type="channel">net10/chan0</member>
       <member type="network">net10</member>
@@ -207,7 +207,7 @@
     <point lat="47.5755964546" lon="-122.121370968" type="gps"/>
   </host>
   <host id="n3" name="n3">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n3/eth0" name="eth0">
       <member index="1" type="channel">net6/chan0</member>
       <member type="network">net6</member>
@@ -226,7 +226,7 @@
     <point lat="47.5768654146" lon="-122.123164833" type="gps"/>
   </host>
   <host id="n4" name="n4">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n4/eth0" name="eth0">
       <member index="1" type="channel">net4/chan0</member>
       <member type="network">net4</member>
@@ -245,7 +245,7 @@
     <point lat="47.5781354119" lon="-122.125098394" type="gps"/>
   </host>
   <host id="n5" name="n5">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n5/eth0" name="eth0">
       <member index="1" type="channel">net1/chan0</member>
       <member type="network">net1</member>
@@ -264,7 +264,7 @@
     <point lat="47.5769219186" lon="-122.127033439" type="gps"/>
   </host>
   <host id="n6" name="n6">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n6/eth0" name="eth0">
       <member index="1" type="channel">net9/chan0</member>
       <member type="network">net9</member>
@@ -283,7 +283,7 @@
     <point lat="47.5757088462" lon="-122.129028223" type="gps"/>
   </host>
   <host id="n7" name="n7">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n7/eth0" name="eth0">
       <member index="1" type="channel">net11/chan0</member>
       <member type="network">net11</member>
@@ -302,7 +302,7 @@
     <point lat="47.5740496336" lon="-122.130930571" type="gps"/>
   </host>
   <host id="n8" name="n8">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n8/eth0" name="eth0">
       <member index="1" type="channel">net0/chan0</member>
       <member type="network">net0</member>
@@ -321,7 +321,7 @@
     <point lat="47.5723207379" lon="-122.128984684" type="gps"/>
   </host>
   <host id="n9" name="n9">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n9/eth0" name="eth0">
       <member index="1" type="channel">net5/chan0</member>
       <member type="network">net5</member>
@@ -340,7 +340,7 @@
     <point lat="47.5708753652" lon="-122.127054156" type="gps"/>
   </host>
   <host id="n10" name="n10">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n10/eth0" name="eth0">
       <member index="1" type="channel">net3/chan0</member>
       <member type="network">net3</member>
@@ -359,7 +359,7 @@
     <point lat="47.5697001729" lon="-122.12515912" type="gps"/>
   </host>
   <host id="n11" name="n11">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n11/eth0" name="eth0">
       <member index="1" type="channel">net7/chan0</member>
       <member type="network">net7</member>
@@ -378,7 +378,7 @@
     <point lat="47.5709538188" lon="-122.123183743" type="gps"/>
   </host>
   <host id="n12" name="n12">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n12/eth0" name="eth0">
       <member index="1" type="channel">net8/chan0</member>
       <member type="network">net8</member>
@@ -397,35 +397,11 @@
     <point lat="47.57224868" lon="-122.121307303" type="gps"/>
   </host>
   <CORE:defaultservices>
-    <device type="mobile">
+    <device type="host">
       <service name="DefaultRoute"/>
       <service name="Serval"/>
       <service name="DTN-RPyC"/>
       <service name="Logger"/>
-    </device>
-    <device type="PC">
-      <service name="DefaultRoute"/>
-    </device>
-    <device type="host">
-      <service name="DefaultRoute"/>
-      <service name="SSH"/>
-    </device>
-    <device type="prouter">
-      <service name="zebra"/>
-      <service name="OSPFv2"/>
-      <service name="OSPFv3"/>
-      <service name="IPForward"/>
-    </device>
-    <device type="mdr">
-      <service name="zebra"/>
-      <service name="OSPFv3MDR"/>
-      <service name="IPForward"/>
-    </device>
-    <device type="router">
-      <service name="zebra"/>
-      <service name="OSPFv2"/>
-      <service name="OSPFv3"/>
-      <service name="IPForward"/>
     </device>
   </CORE:defaultservices>
   <CORE:sessionconfig>

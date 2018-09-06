@@ -57,7 +57,7 @@
     </channel>
   </network>
   <host id="n1" name="n1">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n1/eth0" name="eth0">
       <member index="0" type="channel">net0/chan0</member>
       <member type="network">net0</member>
@@ -76,7 +76,7 @@
     <point lat="47.5762587317" lon="-122.123254746" type="gps"/>
   </host>
   <host id="n2" name="n2">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n2/eth0" name="eth0">
       <member index="1" type="channel">net0/chan0</member>
       <member type="network">net0</member>
@@ -95,7 +95,7 @@
     <point lat="47.5782179331" lon="-122.127071735" type="gps"/>
   </host>
   <host id="n3" name="n3">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n3/eth0" name="eth0">
       <member index="1" type="channel">net1/chan0</member>
       <member type="network">net1</member>
@@ -114,7 +114,7 @@
     <point lat="47.576303521" lon="-122.13091322" type="gps"/>
   </host>
   <host id="n4" name="n4">
-    <type domain="CORE">mobile</type>
+    <type domain="CORE">host</type>
     <interface id="n4/eth0" name="eth0">
       <member index="1" type="channel">net2/chan0</member>
       <member type="network">net2</member>
@@ -133,35 +133,11 @@
     <point lat="47.5743174559" lon="-122.127096673" type="gps"/>
   </host>
   <CORE:defaultservices>
-    <device type="mobile">
+    <device type="host">
       <service name="DefaultRoute"/>
       <service name="Serval"/>
       <service name="DTN-RPyC"/>
       <service name="Logger"/>
-    </device>
-    <device type="PC">
-      <service name="DefaultRoute"/>
-    </device>
-    <device type="host">
-      <service name="DefaultRoute"/>
-      <service name="SSH"/>
-    </device>
-    <device type="prouter">
-      <service name="zebra"/>
-      <service name="OSPFv2"/>
-      <service name="OSPFv3"/>
-      <service name="IPForward"/>
-    </device>
-    <device type="mdr">
-      <service name="zebra"/>
-      <service name="OSPFv3MDR"/>
-      <service name="IPForward"/>
-    </device>
-    <device type="router">
-      <service name="zebra"/>
-      <service name="OSPFv2"/>
-      <service name="OSPFv3"/>
-      <service name="IPForward"/>
     </device>
   </CORE:defaultservices>
   <CORE:sessionconfig>
