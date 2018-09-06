@@ -1,4 +1,4 @@
-FROM umrds/serval_core_worker-gui
+FROM umrds/serval_core_worker-gui:0.2.2
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
