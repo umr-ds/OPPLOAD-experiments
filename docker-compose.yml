@@ -1,0 +1,12 @@
+version: "3"
+services:
+    dtnrpc:
+        build:
+            context: .
+        volumes:
+            - ./shared:/shared
+        privileged: true
+        cap_add:
+            - NET_ADMIN
+        environment:
+            - DISPLAY
