@@ -10,3 +10,6 @@ services:
             - NET_ADMIN
         environment:
             - DISPLAY
+            - BACKEND
+            - CAP=dtnrpc
+            - IDLE=-1
