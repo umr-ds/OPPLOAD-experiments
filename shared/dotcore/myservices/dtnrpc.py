@@ -21,13 +21,12 @@ class DTNRPyCService(CoreService):
     _dirs = ()
     # generated files (without a full path this file goes in the node's dir,
     #  e.g. /tmp/pycore.12345/n1.conf/)
-    _configs = ()
+    _configs = ('coord.xy', )
     # this controls the starting order vs other enabled services
     _startindex = 40
     # list of startup commands, also may be generated during startup
     _startup = (
         'bash -c "cp -r /shared/dtnrpc_configs/* ."',
-        'bash -c "ln -s ../n1.xy coord.xy"',
         'bash -c "nohup /shared/dtnrpc/dtn_rpyc.py -s &> worker.log &"'
     )
     # list of shutdown commands
@@ -38,6 +37,8 @@ class DTNRPyCService(CoreService):
         ''' Return a string that will be written to filename, or sent to the
             GUI for user customization.
         '''
+
+
 
 
 def load_services():

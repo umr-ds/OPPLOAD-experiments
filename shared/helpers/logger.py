@@ -1,12 +1,10 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 import threading
 import subprocess
 import time
 import signal
 import os
-
-from _thread import start_new_thread
 
 
 def execute(command, destination):
@@ -18,11 +16,11 @@ def execute(command, destination):
     time_bytes = str(time.time()).encode()
 
     with open(destination, 'ab') as log_file:
-        log_file.write(b'----- Out' + time_bytes + b' -----\n')
+        log_file.write(b'\n----- Out ' + time_bytes + b' -----\n')
         log_file.write(out)
-        log_file.write(b'----- Err -----\n')
+        log_file.write(b'\n----- Err -----\n')
         log_file.write(err)
-        log_file.write(b'----- End -----\n')
+        log_file.write(b'\n----- End -----\n')
 
 
 def serval_route_print():
@@ -63,7 +61,9 @@ def netmon():
         if 'eth' not in iface:
             continue
 
-        start_new_thread(tcpdump, (iface, ))
+        _thread = threading.Thread(target=tcpdump, args=(iface, ))
+        _thread.daemon = True
+        _thread.start()
 
 
 if __name__ == '__main__':

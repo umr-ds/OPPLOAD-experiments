@@ -25,7 +25,7 @@ class LoggerService(CoreService):
     # this controls the starting order vs other enabled services
     _startindex = 39
     # list of startup commands, also may be generated during startup
-    _startup = ('bash -c sleep 5 ',
+    _startup = ('bash -c "sleep 5"',
                 'bash -c "nohup /shared/helpers/logger.py &> logger.log &"')
     # list of shutdown commands
     _shutdown = ()
