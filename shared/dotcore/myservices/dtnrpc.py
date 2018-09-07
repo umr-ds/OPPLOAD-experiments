@@ -21,7 +21,7 @@ class DTNRPyCService(CoreService):
     _dirs = ()
     # generated files (without a full path this file goes in the node's dir,
     #  e.g. /tmp/pycore.12345/n1.conf/)
-    _configs = ('coord.xy', )
+    _configs = ()
     # this controls the starting order vs other enabled services
     _startindex = 40
     # list of startup commands, also may be generated during startup
