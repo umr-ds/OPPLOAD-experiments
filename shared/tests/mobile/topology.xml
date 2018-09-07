@@ -44,7 +44,7 @@
       <parameter name="error">0</parameter>
       <CORE:mobility>
         <type>ns2script</type>
-        <parameter name="file">/shared/tests/random/movement.ns_movements</parameter>
+        <parameter name="file">/shared/tests/mobile/movement.ns_movement</parameter>
         <parameter name="refresh_ms">50</parameter>
         <parameter name="loop">0</parameter>
         <parameter name="autostart">1.0</parameter>
