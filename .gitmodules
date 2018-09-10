@@ -1,0 +1,3 @@
+[submodule "shared/dtnrpc"]
+	path = shared/dtnrpc
+	url = git@ds.mathematik.uni-marburg.de:maki/DTN-RPyC.git
