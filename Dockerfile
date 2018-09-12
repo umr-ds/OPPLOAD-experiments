@@ -6,6 +6,7 @@ RUN apt-get update \
     unzip \
     tcpdump \
     python3-numpy \
+    gdb \
     && rm -rf /var/lib/apt/lists/*
 
 COPY shared/ /shared
