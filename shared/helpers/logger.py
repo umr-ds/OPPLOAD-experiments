@@ -31,12 +31,18 @@ def serval_route_print():
     execute('servald route print', 'serval.route')
 
 
-def ps_aux():
-    _thread = threading.Timer(10, ps_aux)
+def pidstat():
+    subprocess.Popen(
+        [
+            'bash', '-c', 'pidstat -drush -p ALL 1 >> pidstat'
+        ],
+        stdout=subprocess.PIPE)
+
+
+def processes():
+    _thread = threading.Thread(target=pidstat)
     _thread.daemon = True
     _thread.start()
-
-    execute('ps aux', 'ps.aux')
 
 
 def trace():
@@ -65,10 +71,9 @@ def netmon():
         _thread.daemon = True
         _thread.start()
 
-
 if __name__ == '__main__':
     serval_route_print()
-    ps_aux()
+    processes()
     trace()
     netmon()
 

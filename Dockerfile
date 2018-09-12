@@ -7,6 +7,7 @@ RUN apt-get update \
     tcpdump \
     python3-numpy \
     gdb \
+    sysstat \
     && rm -rf /var/lib/apt/lists/*
 
 COPY shared/ /shared
