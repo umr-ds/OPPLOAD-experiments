@@ -1,9 +1,13 @@
 #!/bin/bash
 
+# Store directory of image for later use
+DIR=$(dirname "${1}")
+BASE=$(basename "${1}")
+
 # Resize the image
 mogrify -crop $2 $1
 
-mv sample_image-0.jpg $1
+mv $DIR/sample_image-0.jpg $DIR/$BASE
 
 # Done
 echo $1
