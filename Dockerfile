@@ -8,7 +8,10 @@ RUN apt-get update \
     python3-numpy \
     gdb \
     sysstat \
+    cmake \
     && rm -rf /var/lib/apt/lists/*
+
+RUN pip install numpy dlib Pillow
 
 COPY shared/ /shared
 

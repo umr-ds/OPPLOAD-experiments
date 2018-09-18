@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Resize the image
+mogrify -crop $2 $1
+
+mv sample_image-0.jpg $1
+
+# Done
+echo $1
+exit 0

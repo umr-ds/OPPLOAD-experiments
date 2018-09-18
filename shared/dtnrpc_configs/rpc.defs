@@ -1,1 +1,5 @@
-shrink file int
+bw file
+detect file
+crop file int
+scale file int
+denoise file int
