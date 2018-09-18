@@ -62,6 +62,15 @@ def tcpdump(iface):
         stdout=subprocess.PIPE)
 
 
+def bwm():
+    subprocess.Popen(
+        [
+            'bwm-ng', '--timeout=1000', '--unit=bytes', '--type=rate',
+            '--output=csv', '-F', 'bwm.csv',
+        ],
+        stdout=subprocess.PIPE)
+
+
 def netmon():
     for iface in os.listdir('/sys/class/net/'):
         if 'eth' not in iface:
@@ -70,6 +79,11 @@ def netmon():
         _thread = threading.Thread(target=tcpdump, args=(iface, ))
         _thread.daemon = True
         _thread.start()
+
+    _thread = threading.Thread(target=bwm)
+    _thread.daemon = True
+    _thread.start()
+
 
 if __name__ == '__main__':
     serval_route_print()

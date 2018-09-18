@@ -5,6 +5,7 @@ RUN apt-get update \
     imagemagick \
     unzip \
     tcpdump \
+    bwm-ng \
     python3-numpy \
     gdb \
     sysstat \
