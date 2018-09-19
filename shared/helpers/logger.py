@@ -65,8 +65,9 @@ def tcpdump(iface):
 def bwm():
     subprocess.Popen(
         [
-            'bwm-ng', '--timeout=1000', '--unit=bytes', '--type=rate',
-            '--output=csv', '-F', 'bwm.csv',
+            'bash', '-c',
+            'bwm-ng --timeout=1000 --unit=bytes --type=rate \
+            --output=csv -F bwm.csv &> bwm.log'
         ],
         stdout=subprocess.PIPE)
 
