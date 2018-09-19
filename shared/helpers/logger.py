@@ -31,20 +31,6 @@ def serval_route_print():
     execute('servald route print', 'serval.route')
 
 
-def pidstat():
-    subprocess.Popen(
-        [
-            'bash', '-c', 'pidstat -drush -p ALL 1 >> pidstat'
-        ],
-        stdout=subprocess.PIPE)
-
-
-def processes():
-    _thread = threading.Thread(target=pidstat)
-    _thread.daemon = True
-    _thread.start()
-
-
 def trace():
     _thread = threading.Timer(10, trace)
     _thread.daemon = True
@@ -53,43 +39,8 @@ def trace():
     execute('cat coord.xy', 'trace.xy')
 
 
-def tcpdump(iface):
-    subprocess.Popen(
-        [
-            'tcpdump', '-n', '-e', '-s', '200', '-i', iface, '-w',
-            '{}.pcap'.format(iface)
-        ],
-        stdout=subprocess.PIPE)
-
-
-def bwm():
-    subprocess.Popen(
-        [
-            'bash', '-c',
-            'bwm-ng --timeout=1000 --unit=bytes --type=rate \
-            --output=csv -F bwm.csv &> bwm.log'
-        ],
-        stdout=subprocess.PIPE)
-
-
-def netmon():
-    for iface in os.listdir('/sys/class/net/'):
-        if 'eth' not in iface:
-            continue
-
-        _thread = threading.Thread(target=tcpdump, args=(iface, ))
-        _thread.daemon = True
-        _thread.start()
-
-    _thread = threading.Thread(target=bwm)
-    _thread.daemon = True
-    _thread.start()
-
-
 if __name__ == '__main__':
     serval_route_print()
-    processes()
     trace()
-    netmon()
 
     signal.pause()
