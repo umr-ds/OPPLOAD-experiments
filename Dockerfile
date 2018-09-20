@@ -7,6 +7,7 @@ RUN apt-get update \
     python3-numpy \
     gdb \
     cmake \
+    psmisc \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip install numpy dlib Pillow
