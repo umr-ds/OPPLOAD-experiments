@@ -415,7 +415,6 @@
     <device type="host">
       <service name="DefaultRoute"/>
       <service name="Serval"/>
-      <service name="DTN-RPyC"/>
       <service name="Logger"/>
       <service name="tcpdump"/>
       <service name="bwm-ng"/>

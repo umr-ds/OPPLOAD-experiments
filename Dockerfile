@@ -12,7 +12,6 @@ RUN apt-get update \
 RUN pip install numpy dlib Pillow
 
 COPY shared/ /shared
-COPY shared/dotcore/myservices/dtnrpc.py /root/.core/myservices/dtnrpc.py
 COPY shared/dotcore/myservices/logger.py /root/.core/myservices/logger.py
 
 RUN echo "export PATH=/shared/dtnrpc:$PATH" >> /root/.bashrc
