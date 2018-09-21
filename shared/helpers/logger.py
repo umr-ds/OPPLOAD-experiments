@@ -40,7 +40,7 @@ def trace():
 
 
 if __name__ == '__main__':
-    serval_route_print()
+    # serval_route_print()
     trace()
 
     signal.pause()
