@@ -7,7 +7,7 @@ services:
         cap_add:
             - NET_ADMIN
         tmpfs:
-            - /tmp
+            - /tmp:exec,mode=777
         environment:
             - DISPLAY
             - BACKEND
