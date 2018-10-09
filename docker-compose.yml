@@ -6,6 +6,8 @@ services:
         privileged: true
         cap_add:
             - NET_ADMIN
+        tmpfs:
+            - /tmp:exec,mode=777
         environment:
             - DISPLAY
             - BACKEND
