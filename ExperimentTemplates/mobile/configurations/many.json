@@ -1,0 +1,1 @@
+{"paramValues":{"clients":[5,10],"movement":[1,2,3,4,5],"worker":["first","random","best","probabilistic"],"scn":["jit"],"cap":["some"]},"capabilities":["dtnrpc-bigmama"],"repetitions":"1","seeds":"5"}

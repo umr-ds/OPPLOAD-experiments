@@ -1,0 +1,1 @@
+{"paramValues":{"clients":[1,5,10],"movement":[1,2,3,4,5],"worker":["first","random","best","probabilistic"],"scn":["jit","aot"],"cap":["some"]},"capabilities":["dtnrpc"],"repetitions":"1","seeds":1}

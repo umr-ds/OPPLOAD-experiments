@@ -1,15 +1,21 @@
-# Topo tests
-## Generate testfile:
+# OPPLOAD Experiments
 
-```
-dd if=/dev/urandom of=test.file bs=1M count=1
-```
+This repo contains everything needed for executing the OPPLOAD experiments
 
-## Insert test.file to all instances
+## Overview
+The experiments were performed using Docker and the [MACI framework](https://maci-research.net/).
 
-```
-bash -c "servald rhizome add file $(servald id self | tail -1) test.file"
-```
+## Docker
+Install Docker as required for your OS and build the image from the Dockerfile in this repo.
 
-# Serval configs
-servald config set rhizome.advertise.interval 2000
+## MACI
+Follow the instructions on the MACI homepage to use it. After installation, replace the `ExperimentTemplates` and `ExperimentFramework` folders in you `maci_data` folder.
+
+## Exection
+Start the built docker container and set the `BACKEND` environment variable to the running MACI backend. You can also use docker compose. Go the MACI backing using your webbrowser, create a new study and start either the ring or mobile experiment.
+
+## Results
+The result logs are stored on the machine where the MACI backend is running.
+
+## Evaluation
+Use the provided Jupyter Notebook file to evaluate the results.
