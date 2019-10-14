@@ -219,6 +219,15 @@ def prepare_job_files(session, scn, clients):
                 'w4': generate_serval_keys("n9")["sid"],
                 'w5': generate_serval_keys("n11")["sid"],
             }
+        elif scn == 'client':
+            job_dict = {
+                'client_sid': client_sid,
+                'w1': client_sid,
+                'w2': client_sid,
+                'w3': client_sid,
+                'w4': client_sid,
+                'w5': client_sid,
+            }
 
         with open(dst_path, "w") as jit_dst_file:
             jit_dst_file.write(job_template.format(**job_dict))
